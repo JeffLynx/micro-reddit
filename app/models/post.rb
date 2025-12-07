@@ -3,5 +3,5 @@ class Post < ApplicationRecord
   validates :content, presence: true, length: { in: 5..140 }
 
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
 end
